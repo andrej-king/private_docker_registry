@@ -1,0 +1,3 @@
+# Run project
+`make init`
+
