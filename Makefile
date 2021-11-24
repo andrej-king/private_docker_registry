@@ -36,4 +36,5 @@ docker-build:
 
 # generate htpasswd file to lock the registry with login and password (login: "registry", password: "password")
 password:
-	docker run --entrypoint htpasswd httpd:2 -Bbn registry password > htpasswd
+	docker run --rm --entrypoint htpasswd registry:2.6 -Bbn registry password > ./docker/development/nginx/auth/htpasswd
+	# docker run --entrypoint htpasswd httpd:2 -Bbn registry password > ./docker/development/nginx/auth/htpasswd

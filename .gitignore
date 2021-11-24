@@ -1,4 +1,3 @@
-.idea
-vagrant/.vagrant
-htpasswd
-
+/.idea
+/vagrant/.vagrant
+/htpasswd

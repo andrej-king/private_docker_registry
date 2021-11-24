@@ -4,6 +4,12 @@
 ## Check repository data:
 [Docker docs API v2 docs](https://docs.docker.com/registry/spec/api/)
 
+### Local develop login data:
+```login
+repository  # login
+password    # password
+```
+
 ###### Local links:
 [/v2](http://localhost:5000/v2) \
 [/v2/_catalog](http://localhost:5000/v2/_catalog) images catalog. \
