@@ -40,10 +40,11 @@ password:
 	# docker run --entrypoint htpasswd httpd:2 -Bbn registry password > ./docker/development/nginx/auth/htpasswd
 
 deploy:
-	ssh ${HOST} -p ${PORT} 'rm -rf registry && mkdir registry'
-	scp -P ${PORT} docker-compose-production.yml ${HOST}:registry/docker-compose.yml
-	scp -P ${PORT} -r docker ${HOST}:registry/docker
-	scp -P ${PORT} ${HTPASSWD_FILE} ${HOST}:registry/htpasswd
-	ssh ${HOST} -p ${PORT} 'cd registry && echo "COMPOSE_PROJECT_NAME=registry" >> .env'
-	ssh ${HOST} -p ${PORT} 'cd registry && docker-compose pull'
-	ssh ${HOST} -p ${PORT} 'cd registry && docker-compose up --build --remove-orphans -d'
+	ssh deploy@${HOST} -p ${PORT} 'rm -rf registry && mkdir registry'
+	scp -P ${PORT} docker-compose-production.yml deploy@${HOST}:registry/docker-compose.yml
+	scp -P ${PORT} -r docker deploy@${HOST}:registry/docker
+	scp -P ${PORT} ${HTPASSWD_FILE} deploy@${HOST}:registry/htpasswd
+	ssh deploy@${HOST} -p ${PORT} 'cd registry && echo "COMPOSE_PROJECT_NAME=registry" >> .env'
+	ssh deploy@${HOST} -p ${PORT} 'cd registry && docker-compose down --remove-orphans'
+	ssh deploy@${HOST} -p ${PORT} 'cd registry && docker-compose pull'
+	ssh deploy@${HOST} -p ${PORT} 'cd registry && docker-compose up -d'

@@ -1,3 +1,4 @@
 /.idea
 /vagrant/.vagrant
 /htpasswd
+/provisioning/hosts.yml

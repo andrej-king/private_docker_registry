@@ -4,7 +4,7 @@
 # bullseye64 (debian 11)
 VAGRANT_BOX = "debian/bullseye64"
 VM_NAME = 'privateDockerRegistry'
-VM_USER = 'andrey'
+VM_USER = 'ubuntu'
 
 Vagrant.configure("2") do |config|
   # Every Vagrant development environment requires a box. You can search for

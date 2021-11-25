@@ -1,0 +1,10 @@
+---
+-   name: Provision Site
+    hosts: site
+    remote_user: ubuntu
+    become: yes
+    ignore_errors: yes
+    roles:
+        - docker
+        - certbot
+        - registry
