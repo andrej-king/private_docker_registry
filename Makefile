@@ -1,7 +1,6 @@
-init: docker-down-clear docker-build docker-up vagrant-up
-up: docker-up vagrant-up
-down: docker-down vagrant-shutdown
-restart: vagrant-restart
+init: docker-down-clear docker-build docker-up
+up: docker-up
+down: docker-down
 
 # create and run VM
 vagrant-up:
