@@ -1,6 +1,6 @@
 ---
 -   name: Provision Site
-    hosts: site
+    hosts: all
     remote_user: ubuntu
     become: yes
     ignore_errors: yes
