@@ -1,6 +1,18 @@
 # Run project
 `make init`
 
+### Prepare to production
+```steps
+# Set login and password
+make password
+
+# build images
+make build
+
+# change data to correct
+HOST=0.0.0.0 PORT=0 HTPASSWD_FILE=htpasswd BUILD_NUMBER=1 make deploy
+```
+
 ## Check repository data:
 [Docker docs API v2 docs](https://docs.docker.com/registry/spec/api/)
 
