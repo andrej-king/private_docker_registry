@@ -26,3 +26,9 @@ password    # password
 [/v2](http://localhost:5000/v2) \
 [/v2/_catalog](http://localhost:5000/v2/_catalog) images catalog. \
 [/v2/image_name/tags/list](http://localhost:5000/v2/auction-gateway/tags/list) tags.
+
+### Private docker registry login
+
+```docker
+docker login <registry.example.com> --username <docker username> --password <docker password>
+```
